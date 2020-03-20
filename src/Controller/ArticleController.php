@@ -17,43 +17,17 @@ class ArticleController extends AbstractController
     /**
      * @Route("/article", name="article")
      */
-    // public function index()
-    // {
-    //     $articles = [new Article(0, "pommes"), new Article(1, "poires"), new Article(2, "pêches")];
-    //     return $this->render('article/index.html.twig', [
-    //         'controller_name' => 'ArticleController', 'articles' => $articles,
-    //     ]);
-    // }
+    public function index()
+    {
+        $articles = [new Article(0, "pommes"), new Article(1, "poires"), new Article(2, "pêches")];
+        return $this->render('article/index.html.twig', [
+            'controller_name' => 'ArticleController', 'articles' => $articles,
+        ]);
+    }
 
 
     /**
-     * @Route("/article/{id}", name="article_detail") */
-    // public function getArticle($id)
-    // {
-    //     $articles = [new Article(0, 'pommes'), new Article(1, 'poires'), new Article(2, 'pêches')];
-    //     $article = $articles[$id];
-    //     return $this->render('article/detail.html.twig', [
-    //         'controller_name' => 'ArticleController', 'article' => $article,
-    //     ]);
-
-
-
-    //     try {
-    //         $article = $articles[$id];
-    //         return $this->render('article/detail.html.twig', [
-    //             'controller_name' => 'ArticleController',
-    //             'article' => $article,
-    //         ]);
-    //     } catch (\ErrorException $e) {
-    //         return $this->render('article/index.html.twig', [
-    //             'controller_name' => 'ArticleController',
-    //             'error' => $e->getMessage(),
-    //         ]);
-    //     }
-    // }
-
-    /**
-     * @Route("/fill") 
+     * @Route("/fill", name="app_new") 
      */
     public function new(): Response
     {
@@ -81,7 +55,7 @@ class ArticleController extends AbstractController
 
 
     /**
-     * @Route("/all") 
+     * @Route("/all" , name="app_getAll") 
      */
     public function getAll()
     {

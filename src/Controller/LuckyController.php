@@ -11,14 +11,14 @@ class LuckyController extends AbstractController
 
 
     /**
-     * @Route("/lucky/{slug}")
+     * @Route("/lucky" , name="app_lucky")
      */
     public function homepage()
     {
         $number = random_int(0, 100);
 
-        return new Response(
-            '<html><body>Lucky number: ' . $number . '</body></html>'
-        );
+        return $this->render('lucky.html.twig', [
+            'number' => $number,
+        ]);
     }
 }

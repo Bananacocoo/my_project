@@ -13,7 +13,7 @@ use App\Repository\ProductRepository;
 class ProductController extends AbstractController
 {
     /**
-     * @Route("/product", name="create_product")
+     * @Route("/product")
      */
     public function createProduct(): Response
     {
@@ -73,12 +73,4 @@ class ProductController extends AbstractController
 
 
 
-    /**
-     * @Route("/product/{id}", name="product_show")
-     */
-    public function show(Product $product)
-    {
-        // use the Product!
-        // ...
-    }
 }
